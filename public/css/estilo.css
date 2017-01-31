@@ -1,0 +1,138 @@
+/* Meu CSS */
+body,
+html{
+    margin:  0;
+    padding: 0;
+    font-size:18px;
+}
+body{
+    background:#ccc url(../img/map-saturation-overlay.png) center top no-repeat;
+    background-size:100%;
+    background-attachment:fixed;
+    font-style: arial;
+}
+a, a img{
+    text-decoration:none;
+    border:none;
+}
+img{
+    max-width: 100%;
+    height:auto;
+}
+form label {
+    display: inline-block;
+    text-align: left;
+}
+form input, textarea {
+    font: 1em sans-serif;
+    width: 100%;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #999;
+}
+form input:focus, textarea:focus {
+    border-color: #000;
+}
+form textarea {
+    vertical-align: top;
+    height: 5em;
+    resize: vertical;
+}
+button {
+    margin-left: .5em;
+}
+.table {
+    width: 98%;
+}
+.table thead tr{
+    background: #fff;
+}
+.zebraUm{
+    background: #f0f0f0;
+}
+.zebraDois{
+    background: #cccccc;
+}
+.id{
+    text-align: center;
+}
+.principal{
+    width: 70%;
+    color: #444;
+    margin: 0 auto;
+    font-family:sans-serif;
+}
+.cabecalho,
+.logo,
+.rodape,
+.menu{
+    width:100%;
+    display:block;
+    clear:both;
+}
+.cabecalho{
+    height:190px;
+    background:#fff url(../img/IFMG-Completa-JPG.jpg) left top no-repeat;
+}
+.logo-cabecalho{
+    float:left;
+}
+.logo-cabecalho a{
+    font-size:40px;
+    text-decoration:none;
+    color:#000;
+    display:block;
+    padding:20px 0 0 0;
+}
+.menu{
+    background:#000;
+}
+.menu ul li,
+.menu ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+.menu ul li{
+    display:inline-block;
+}
+.menu ul li:hover {
+    background:#565656;
+}
+.menu ul li a{
+    display:block;
+    color:#fff;
+    padding:13px 20px;
+}
+.corpo{
+    position:relative;
+    overflow:hidden;
+    min-height: 350px;
+}
+.conteudo{
+    float:left;
+    padding: 10px;
+}
+.conteudo p{
+    text-align: left;
+}
+.conteudo, .conteudo:before{
+    width:100%;
+}
+.conteudo:before{
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    background:#fff;
+    z-index:-1;
+    content:'';
+}
+.conteudo h1{
+    font-size: 24px;
+}
+.rodape{
+    padding:20px;
+    text-align:center;
+    font-size: 14px;
+}
