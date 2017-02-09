@@ -1,11 +1,12 @@
+<?php  if(true) { ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
 
-        <link rel="stylesheet" type="text/css" href="/public/css/estilo.css">
-        <script src="/public/js/jquery-3.1.1.min.js"></script>
-        <script src="/public/js/functions.js"></script>
+        <link rel="stylesheet" type="text/css" href="<?= basePath; ?>/public/css/estilo.css">
+        <script src="<?= basePath; ?>/public/js/jquery-3.1.1.min.js"></script>
+        <script src="<?= basePath; ?>/public/js/functions.js"></script>
 
         <title>Projeto de Sistemas Web</title>
     </head>
@@ -17,8 +18,8 @@
             </div>
             <div class="menu">
                 <ul>
-                    <li> <a href="/">Início</a></li>
-                    <li> <a href="/service/teste" id="teste">Teste</a></li>
+                    <li> <a href="<?= basePath; ?>/">Início</a></li>
+                    <li> <a href="<?= basePath; ?>/teste" id="teste">Teste</a></li>
                 </ul>
             </div>
             <div class="corpo">
@@ -29,8 +30,9 @@
                 </div>
             </div>
             <div class="rodape">
-                EAD IFMG | Projeto de Sistemas Web | 2017
+                EAD IFMG | Projeto de Sistemas Web
             </div>
         </div>
     </body>
 </html>
+<?php } ?>
