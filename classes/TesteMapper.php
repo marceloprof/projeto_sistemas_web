@@ -15,15 +15,18 @@
 
         public function getTeste($params) {
 
-            $obj = $this->pdo->prepare('
-                SELECT * FROM teste',
-                array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY)
-            );
-
-            $obj->execute();
-
-            $result = $obj->fetchAll();
-            $obj = null;
+            try {
+                $obj = $this->pdo->prepare('
+                    SELECT * FROM teste',
+                    array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY)
+                );
+                $obj->execute();
+                $result = $obj->fetchAll();
+            }
+            catch (Exception $e) {
+                //throw $e;
+                $result = $e;
+            }
 
             return $result;
         }
