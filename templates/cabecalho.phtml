@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="<?php echo basePath; ?>/public/css/estilo.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo basePath; ?>/public/css/dataTables.min.css">
+        <script src="<?php echo  basePath; ?>/public/js/jquery-3.1.1.min.js"></script>
+        <script src="<?php echo  basePath; ?>/public/js/jquery.dataTables.min.js"></script>
+        <script src="<?php echo  basePath; ?>/public/js/functions.js"></script>
+        <title>Projeto de Sistemas Web</title>
+    </head>
+    <body>
+        <div class="principal">
+            <div class="cabecalho">
+                <div class="logo-cabecalho"></div>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li> <a href="<?php echo  basePath; ?>/">Início</a></li>
+                    <li> <a href="<?php echo  basePath; ?>/teste" id="teste">Teste</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Aluno</a>
+                        <div class="dropdown-content">
+                          <a href="#">Cadastrar</a>
+                          <a href="<?php echo  basePath; ?>/aluno/listar" id="listarAluno">Listar</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="corpo">
+                <div class="conteudo">
+                    <div id="retorno">
