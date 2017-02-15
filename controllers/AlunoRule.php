@@ -43,3 +43,11 @@
 
         return $response;
     });
+
+    $app->get('/aluno/excluir/{id}', function (Request $request, Response $response, $args) {
+        $mapper = new AlunoMapper($this->db);
+        $mapper->setIdCadastroAluno((int)$args['id']);
+        $data = $mapper->excluirAluno();
+
+        return $response->withRedirect(basePath.'/aluno/listar');
+    });

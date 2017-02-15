@@ -130,6 +130,25 @@
             return $result;
         }
 
+        public function excluirAluno() {
+            $obj = $this->pdo->prepare("
+                DELETE FROM cadastroAluno WHERE idcadastroAluno = :idcadastroAluno");
+            $obj->execute(array(':idcadastroAluno' => $this->getIdCadastroAluno()));
+            try {
+                $result = array("data" => "Aluno excluído com sucesso.",
+                                          "type" => "SUCESS",
+                                          "code" => 200);
+            }
+            catch(Exception $e) {
+                $result = array("data" => $e->getMessage(),
+                                          "type" => "ERROR",
+                                          "code" => 400);
+            }
+            $obj = null;
+
+            return $result;
+        }
+
         public function converterData() {
             $date = explode('/', $this->getDataNascimento());
             $result = $date[2].'-'.$date[1].'-'.$date[0];
