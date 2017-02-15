@@ -6,5 +6,5 @@
     $config['db']['host']   = "localhost";
     $config['db']['user']   = "root";
     $config['db']['pass']   = "123456";
-    $config['db']['dbname'] = "eadifmg";
+    $config['db']['dbname'] = "ceadifmg";
     $config['db']['port'] = "3306";

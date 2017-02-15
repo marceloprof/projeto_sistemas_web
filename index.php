@@ -9,15 +9,14 @@
     $basePath = (empty($basePath[2])) ? null : '/'.$basePath[1];
     define('basePath', $basePath);
 
-    //Set up Autoloading for Own Classes
-    spl_autoload_register(function ($classname) {
-        require_once ("./classes/" . $classname . ".php");
+    //Set up Autoloading for Classes
+    spl_autoload_register(function ($classe) {
+        require_once ("./classes/" . $classe . ".php");
     });
 
     //Add Config Settings
     require_once './controllers/config.php';
     $app = new \Slim\App(["settings" => $config]);
-
 
     //Add Container
     $container = $app->getContainer();
@@ -28,17 +27,12 @@
 
     //Add Rules
     $app->get('/', function (Request $request, Response $response) {
+        $response = $this->view->render($response, "cabecalho.phtml");
         $response = $this->view->render($response, "index.phtml");
+        $response = $this->view->render($response, "rodape.phtml");
         return $response;
     });
-
-    $app->get('/teste', function (Request $request, Response $response, $args) {
-        //$json = $request->getParsedBody();
-        //$json['atributte']));
-        $mapper = new TesteMapper($this->db);
-        $data = $mapper->getTeste();
-
-        return $response->withJson($data, 200);
-    });
+    require_once './controllers/TesteRule.php';
+    require_once './controllers/AlunoRule.php';
 
     $app->run();
