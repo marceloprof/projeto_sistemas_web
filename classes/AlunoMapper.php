@@ -14,6 +14,10 @@
             $this->pdo = $pdo;
         }
 
+        public function __destruct() {
+            $this->pdo = null;
+        }
+
         public function setIdCadastroAluno($idcadastroAluno) {
             $this->idcadastroAluno = $idcadastroAluno;
         }
@@ -79,14 +83,14 @@
         public function cadastrarAluno() {
             $obj = $this->pdo->prepare("
                 INSERT INTO cadastroAluno (nome, RG, dataNascimento, curso)
-                VALUES (:nome, :RG, :dataNascimento, :curso)",
-                array(':nome' => getNome(),
-                          ':RG' => getRG(),
-                          ':dataNascimento' => getDataNascimento(),
-                          ':curso' => getCurso()));
-            $obj->execute();
+                VALUES (:nome, :RG, :dataNascimento, :curso)");
+            $obj->execute(
+                array(':nome' => $this->getNome(),
+                          ':RG' => $this->getRG(),
+                          ':dataNascimento' => $this->converterData(),
+                          ':curso' => $this->getCurso()));
             try {
-                $result = array("data" => "Aluno cadastrado com sucesso!",
+                $result = array("data" => "Aluno cadastrado com sucesso.",
                                          "type" => "SUCESS",
                                          "code" => 200);
             }
@@ -100,7 +104,36 @@
             return $result;
         }
 
-        public function __destruct() {
-            $this->pdo = null;
+        public function validarAluno() {
+            $obj = $this->pdo->prepare("
+                SELECT idcadastroAluno FROM cadastroAluno
+                WHERE nome = :nome AND curso = :curso");
+            $obj->execute(
+                array(':nome' => $this->getNome(),
+                          ':curso' => $this->getCurso()));
+            try {
+                if(count($obj->fetchAll()) > 0) {
+                    $result = array("data" => "Aluno já existente no Curso.",
+                                              "type" => "ERROR",
+                                              "code" => 200);
+                } else {
+                    $result = array();
+                }
+            }
+            catch(Exception $e) {
+                $result = array("data" => $e->getMessage(),
+                                          "type" => "ERROR",
+                                          "code" => 400);
+            }
+            $obj = null;
+
+            return $result;
+        }
+
+        public function converterData() {
+            $date = explode('/', $this->getDataNascimento());
+            $result = $date[2].'-'.$date[1].'-'.$date[0];
+
+            return $result;
         }
     }

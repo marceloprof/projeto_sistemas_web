@@ -1,4 +1,4 @@
-<table id="tableAluno" class="display" cellspacing="0">
+<table id="listarAluno" cellspacing="0">
     <thead>
         <tr>
             <th>ID</th>
@@ -18,3 +18,15 @@
         </tr>
     </tfoot>
 </table>
+<script type="text/javascript">
+    $('#listarAluno').DataTable( {
+        data: <?php echo $data; ?>,
+        columns: [
+            { data: 'idcadastroAluno' },
+            { data: 'nome' },
+            { data: 'RG' },
+            { data: 'dataNascimento' },
+            { data: 'curso' }
+        ]
+    });
+</script>
