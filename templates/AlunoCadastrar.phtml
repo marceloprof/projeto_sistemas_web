@@ -1,0 +1,39 @@
+<strong>Cadastro de Aluno</strong>
+<p>Preencha os campos abaixo.</p>
+<table id="cadastrarAluno" cellspacing="0">
+    <thead>
+    <form action="<?php echo basePath; ?>/aluno/salvar" method="post">
+        <tr class="nome">
+            <td>Nome:</td>
+            <td><input type="text" name="nome" maxlength="45" id="nomeAluno" value=""></td>
+            <td>*</td>
+        </tr>
+        <tr class="rg">
+            <td>RG:</td>
+            <td><input type="text" name="RG" maxlength="12" id="rgAluno" value=""></td>
+            <td>*</td>
+        </tr>
+        <tr class="data">
+            <td>Data Nasc.:</td>
+            <td><input type="text" name="dataNascimento" id="dataNascimentoAluno" value=""></td>
+            <td>*</td>
+        </tr>
+        <tr class="curso">
+            <td>Curso:</td>
+            <td><input type="text" name="curso" maxlength="45" id="cursoAluno" value=""></td>
+            <td>*</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" id="salvarAluno" value="Salvar"></td>
+            <td></td>
+        </tr>
+    </form>
+    </thead>
+</table>
+<?php
+    if($data['type'] == 'ERROR')
+        echo '<span id="msg" style="color:red">'.$data['data'].'</span>';
+    else
+        echo '<span id="msg" style="color:green">'.$data['data'].'</span>';
+?>

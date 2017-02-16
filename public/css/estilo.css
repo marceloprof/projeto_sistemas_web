@@ -147,19 +147,11 @@ button {
     font-size: 14px;
 }
 
-/* Configurações das tabelas */
-.table {
-    width: 100%;
+/* Formulários de cadastros */
+#cadastrarAluno td {
+    padding: 5px;
+    text-align: right;
 }
-.table thead tr{
-    background: #fff;
-}
-.zebraUm{
-    background: #f0f0f0;
-}
-.zebraDois{
-    background: #cccccc;
-}
-.id{
-    text-align: center;
+#cadastrarAluno input[type=text] {
+    width: 300px;
 }

@@ -1,0 +1,40 @@
+<table id="listarAluno" cellspacing="0">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>RG</th>
+            <th>Data Nasc.</th>
+            <th>Curso</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <!--<th>ID</th>
+            <th>Nome</th>
+            <th>RG</th>
+            <th>Data Nasc.</th>
+            <th>Curso</th>-->
+        </tr>
+    </tfoot>
+</table>
+<script type="text/javascript">
+    $('#listarAluno').DataTable( {
+        data: <?php echo $data; ?>,
+        columns: [
+            { data: 'idcadastroAluno' },
+            { data: 'nome' },
+            { data: 'RG' },
+            { data: 'dataNascimento' },
+            { data: 'curso' },
+            { data: 'idcadastroAluno' }
+        ],
+        "columnDefs": [ {
+            "targets": 5,
+            "render": function (data, type, full, meta ) {
+              return '<a href="<?php echo basePath; ?>/aluno/excluir/'+data+'">Excluir</a>';
+            }
+          } ]
+    });
+</script>
