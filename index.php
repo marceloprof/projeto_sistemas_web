@@ -34,6 +34,7 @@
     });
     require_once './controllers/TesteRule.php';
     require_once './controllers/AlunoRule.php';
+    require_once './controllers/DisciplinaRule.php';
     require_once './controllers/TurmaRule.php';
 
     $app->run();
