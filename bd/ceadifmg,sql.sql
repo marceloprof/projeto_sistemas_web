@@ -30,10 +30,10 @@ CREATE TABLE IF NOT EXISTS `ceadifmg`.`cadastroAluno` (
 ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `ceadifmg`.`cadastroTurma` (
-  `idcadastroAluno` INT NOT NULL AUTO_INCREMENT,
+  `idcadastroTurma` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) NOT NULL,
   `cod` VARCHAR(20) NOT NULL,
-  PRIMARY KEY (`idcadastroAluno`))
+  PRIMARY KEY (`idcadastroTurma`))
 ENGINE = InnoDB;
 
 SET SQL_MODE=@OLD_SQL_MODE;

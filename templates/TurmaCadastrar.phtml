@@ -1,21 +1,21 @@
-<strong>Cadastro de Aluno</strong>
+<strong>Cadastro de Turmas</strong>
 <p>Preencha os campos abaixo.</p>
 <table id="cadastrarAluno" cellspacing="0">
     <thead>
-    <form action="<?php echo basePath; ?>/aluno/salvar" method="post">
+    <form action="<?php echo basePath; ?>/turma/salvar" method="post">
         <tr class="nome">
             <td>Nome:</td>
             <td><input type="text" name="nome" maxlength="45" id="nomeTurma" value=""></td>
             <td>*</td>
         </tr>
-        <tr class="rg">
+        <tr class="cod">
             <td>Cod:</td>
-            <td><input type="text" name="RG" maxlength="12" id="codTurma" value=""></td>
+            <td><input type="text" name="cod" maxlength="12" id="codTurma" value=""></td>
             <td>*</td>
         </tr>
         <tr>
             <td></td>
-            <td><input type="submit" id="salvarAluno" value="Salvar"></td>
+            <td><input type="submit" id="salvarTurma" value="Salvar"></td>
             <td></td>
         </tr>
     </form>

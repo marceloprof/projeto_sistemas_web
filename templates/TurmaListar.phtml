@@ -1,9 +1,9 @@
-<table id="listarAluno" cellspacing="0">
+<table id="listarTurma" cellspacing="0">
     <thead>
         <tr>
             <th>ID</th>
             <th>Nome</th>
-            <th>COD</th>
+            <th>Cod</th>
             <th>Ação</th>
         </tr>
     </thead>
@@ -11,24 +11,24 @@
         <tr>
             <!--<th>ID</th>
             <th>Nome</th>
-            <th>RG</th>
-            <th>Data Nasc.</th>
-            <th>Curso</th>-->
+            <th>Cod</th>-->
         </tr>
     </tfoot>
 </table>
+
 <script type="text/javascript">
-    $('#listarAluno').DataTable( {
+    $('#listarTurma').DataTable( {
         data: <?php echo $data; ?>,
         columns: [
             { data: 'idcadastroTurma' },
             { data: 'nome' },
-            { data: 'cod' }
+            { data: 'cod' },
+            { data: 'idcadastroTurma' },
         ],
         "columnDefs": [ {
-            "targets": 5,
+            "targets": 3,
             "render": function (data, type, full, meta ) {
-              return '<a href="<?php echo basePath; ?>/aluno/excluir/'+data+'">Excluir</a>';
+              return '<a href="<?php echo basePath; ?>/turma/excluir/'+data+'">Excluir</a>';
             }
           } ]
     });

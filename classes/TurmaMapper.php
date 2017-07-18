@@ -2,7 +2,7 @@
     /**
     * Mapper da entidade Aluno
     */
-    class AlunoMapper
+    class TurmaMapper
     {
         private $idcadastroTurma;
         private $nome;
@@ -16,8 +16,8 @@
             $this->pdo = null;
         }
 
-        public function setIdCadastroAluno($idcadastroTurma) {
-            $this->idcadastroAluno = $idcadastroTurma;
+        public function setIdCadastroTurma($idcadastroTurma) {
+            $this->idcadastroTurma = $idcadastroTurma;
         }
 
         public function setNome($nome) {
@@ -25,7 +25,7 @@
         }
 
         public function setCod($cod) {
-            $this->RG = $cod;
+            $this->cod = $cod;
         }
 
         public function getIdCadastroTurma() {
@@ -40,7 +40,7 @@
             return $this->cod;
         }
 
-        public function listarAluno() {
+        public function listarTurma() {
             $obj = $this->pdo->prepare('
                 SELECT idcadastroTurma, nome, cod
                 FROM cadastroTurma
@@ -57,11 +57,10 @@
                                          "code" => 400);
             }
             $obj = null;
-
             return $result;
         }
 
-        public function cadastrarAluno() {
+        public function cadastrarTurma() {
             $obj = $this->pdo->prepare("
                 INSERT INTO cadastroTurma (nome, cod)
                 VALUES (:nome, :cod)");
@@ -69,7 +68,7 @@
                 array(':nome' => $this->getNome(),
                           ':cod' => $this->getCod()));
             try {
-                $result = array("data" => "Aluno cadastrado com sucesso.",
+                $result = array("data" => "Turma cadastrado com sucesso.",
                                          "type" => "SUCESS",
                                          "code" => 200);
             }
@@ -83,13 +82,13 @@
             return $result;
         }
 
-        public function validarTurmaExiste() {
+        public function validarTurma() {
             $obj = $this->pdo->prepare("
                 SELECT idcadastroTurma FROM cadastroTurma
                 WHERE nome = :nome OR cod = :cod");
             $obj->execute(
                 array(':nome' => $this->getNome(),
-                          ':curso' => $this->getCurso()));
+                          ':cod' => $this->getCod()));
             try {
                 if(count($obj->fetchAll()) > 0) {
                     $result = array("data" => "Turma já existente",
