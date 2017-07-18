@@ -29,6 +29,12 @@ CREATE TABLE IF NOT EXISTS `ceadifmg`.`cadastroAluno` (
   PRIMARY KEY (`idcadastroAluno`))
 ENGINE = InnoDB;
 
+CREATE TABLE IF NOT EXISTS `ceadifmg`.`cadastroTurma` (
+  `idcadastroAluno` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(45) NOT NULL,
+  `cod` VARCHAR(20) NOT NULL,
+  PRIMARY KEY (`idcadastroAluno`))
+ENGINE = InnoDB;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
