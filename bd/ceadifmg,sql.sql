@@ -29,6 +29,7 @@ CREATE TABLE IF NOT EXISTS `ceadifmg`.`cadastroAluno` (
   PRIMARY KEY (`idcadastroAluno`))
 ENGINE = InnoDB;
 
+
 CREATE TABLE IF NOT EXISTS `ceadifmg`.`cadastrardisciplina` (
   `iddisciplina` INT NOT NULL AUTO_INCREMENT,
   `disciplinanome` VARCHAR(45) NOT NULL,
@@ -37,6 +38,14 @@ CREATE TABLE IF NOT EXISTS `ceadifmg`.`cadastrardisciplina` (
  
   PRIMARY KEY (`iddisciplina`))
 ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `ceadifmg`.`cadastroTurma` (
+  `idcadastroTurma` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(45) NOT NULL,
+  `cod` VARCHAR(20) NOT NULL,
+  PRIMARY KEY (`idcadastroTurma`))
+ENGINE = InnoDB;
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
